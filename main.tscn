@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://uy88cvxtgnav"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_btumn"]
+[ext_resource type="PackedScene" uid="uid://d0hyig8ic0qyr" path="res://daecrib_-_inventors_room.glb" id="1_d55fq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tb3um"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_kklcy"]
+sky_material = SubResource("ProceduralSkyMaterial_tb3um")
+
+[sub_resource type="Environment" id="Environment_bl0fg"]
+background_mode = 2
+sky = SubResource("Sky_kklcy")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_ayt6i"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o8g5y"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_btumn")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bl0fg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06688, 0)
+
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.562534, 1.88581, -1.13235)
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftHand"]
+mesh = SubResource("BoxMesh_ayt6i")
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.503222, 1.69953, -1.23938)
+tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand"]
+mesh = SubResource("BoxMesh_o8g5y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_d55fq")]
+transform = Transform3D(0.419169, 0, -0.272576, 0, 0.5, 0, 0.272576, 0, 0.419169, 0.299311, 2.30658, -2.20985)

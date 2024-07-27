@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://de8y5pf04mff"
+path.s3tc="res://.godot/imported/daecrib_-_inventors_room_2.jpg-42629f402c0f44357b95dc1ebe97e9d9.s3tc.ctex"
+path.etc2="res://.godot/imported/daecrib_-_inventors_room_2.jpg-42629f402c0f44357b95dc1ebe97e9d9.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "258c730d7d917dbcd53b1df0db7412d0"
+}
+
+[deps]
+
+source_file="res://daecrib_-_inventors_room_2.jpg"
+dest_files=["res://.godot/imported/daecrib_-_inventors_room_2.jpg-42629f402c0f44357b95dc1ebe97e9d9.s3tc.ctex", "res://.godot/imported/daecrib_-_inventors_room_2.jpg-42629f402c0f44357b95dc1ebe97e9d9.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
